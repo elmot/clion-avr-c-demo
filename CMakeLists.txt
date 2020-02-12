@@ -21,11 +21,13 @@ include(CMakeVerifyCompiler.txt)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(inc)
+
 add_compile_definitions("__AVR_${TARGET_CPU}__")
 
 add_link_options(-Wl,--print-memory-usage)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp)
 
 #### Uncomment this to see flashing process details
 #set(FLASH_VERBOSE_FLAG "-v")
