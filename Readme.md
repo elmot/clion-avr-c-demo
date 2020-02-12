@@ -1,7 +1,7 @@
 # Demo project CLion + Arduino Mega2560 + AVR-GCC compiler
 **Note** Debug is not supported yet
 ## Prerequirements
-###Hardware
+### Hardware
 - [Arduino Mega2560 or compatible board](https://store.arduino.cc/usa/mega-2560-r3)
 ### All platforms(MAC, Linux, Windows)
 - [CLion 2020.1+](https://jetbrains.com/clion)
@@ -15,9 +15,22 @@
 
 ### Use the project
 - Open the project with CLion
-- Setup a new CLion Toolchain (i.e. set compilators location) with your AVR8 GNU installation
-(*Settings -> Build, Execution, Deployment -> Toolchains*)
+- Setup a new CLion Toolchain (i.e. set compilators location) with your AVR8 GNU installation (*Settings -> Build, Execution, Deployment -> Toolchains*)
+<details>
+<summary>Screenshot 1</summary>
+ 
+![CLion Settings Part I](docs/settings_toolchains.png "CLion Settings Part I")
+ 
+</details>
+
 - Use the toolchain for the project (*Settings -> Build, Execution, Deployment -> CMake -> Toolchain:*)
+<details>
+<summary>Screenshot 2</summary>
+ 
+![CLion Settings Part II](docs/settings_cmake.png "CLion Settings Part II")
+ 
+</details>
+
 - Adjust CMakeLists.txt settings, such as avrdude location and actual COM port
 - Select *FLASH* run configuration
 - Build it. Arduino yellow LED should start blinking about 1Hz
@@ -29,13 +42,9 @@
 - Clone this project
 - Make adjustments as in "Use the project"
 - Open the project with CLion
-- Correct the project according to it
-  - *CMakeLists.txt*
+- Correct *CMakeLists.txt*
     - Project name  in *add_executable()* clause 
     - List of source files in *add_executable*  clause
     - add *include_directories()* clause(s) if needed 
     - TARGET_CPU
     - FLASH custom target command line to reflect another hardware
-
-
- 
