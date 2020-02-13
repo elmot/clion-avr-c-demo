@@ -10,7 +10,7 @@ extern "C" {
 };
 
 namespace LED {
-    static auto constexpr LED_BITMASK = 1u << (unsigned) PB7;
+    static auto constexpr LED_BITMASK = 1u << (unsigned) PB5;
 }
 
 inline void led_init() {

@@ -4,14 +4,14 @@ SET(CMAKE_SYSTEM_VERSION 1)
 
 ####################################
 #  Target-specific stuff
-set(TARGET_CPU ATmega2560)
+set(TARGET_CPU ATmega328)
 #  End of target-specific stuff
 ####################################
 
 ###################################
 #  Machine-specific stuff
 set(AVR_DUDE_EXECUTABLE C:/tools/avrdude-6.3-mingw32/avrdude.exe)
-set(AVR_DUDE_PORT COM9)
+set(AVR_DUDE_PORT COM13)
 #  End of machine-specific stuff
 ###################################
 
@@ -33,6 +33,6 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 #set(FLASH_VERBOSE_FLAG "-v")
 
 add_custom_target(FLASH
-        ${AVR_DUDE_EXECUTABLE} -p ${TARGET_CPU} -c wiring -b115200 -P ${AVR_DUDE_PORT} ${FLASH_VERBOSE_FLAG} -F -D -U flash:w:${PROJECT_BINARY_DIR}/${PROJECT_NAME}:a
+        ${AVR_DUDE_EXECUTABLE} -p ${TARGET_CPU} -c arduino -b115200 -P ${AVR_DUDE_PORT} ${FLASH_VERBOSE_FLAG} -F -D -U flash:w:${PROJECT_BINARY_DIR}/${PROJECT_NAME}:a
         DEPENDS ${PROJECT_NAME}
         COMMENT "Flash to ${TARGET_CPU}")

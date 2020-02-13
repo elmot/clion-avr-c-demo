@@ -1,8 +1,8 @@
-# Demo project CLion + Arduino Mega2560 + AVR-GCC compiler
+# Demo project CLion + Arduino + AVR-GCC compiler
 **Note** Debug is not supported yet
 ## Prerequirements
 ### Hardware
-- [Arduino Mega2560 or compatible board](https://store.arduino.cc/usa/mega-2560-r3)
+- [Arduino Uno or compatible board](https://store.arduino.cc/usa/arduino-uno-rev3)
 ### All platforms(MAC, Linux, Windows)
 - [CLion 2020.1+](https://jetbrains.com/clion)
 - [AVR8 GNU Toolchain](https://www.microchip.com/mplab/avr-support/avr-and-arm-toolchains-c-compilers)
