@@ -1,4 +1,4 @@
-# Demo project CLion + Arduino + AVR-GCC compiler
+# Demo project CLion + Arduino Uno + AVR-GCC compiler
 **Note** Debug is not supported yet
 ## Prerequirements
 ### Hardware
@@ -34,11 +34,29 @@
 - Adjust CMakeLists.txt settings, such as avrdude location and actual COM port
 - Select *FLASH* run configuration
 - Build it. Arduino yellow LED should start blinking about 1Hz
+### Use simulator(simavr)
+- Install the simulator
+  - Linux, Mac, see https://github.com/buserror/simavr
+  - Windows install (https://sourceforge.net/projects/simutron/files/), simavr comes with it
+ - Open the project with CLion
+ - Setup AVR toolchain and CMake as above
+ - Open *SIMAVR* Run Configuaration and set actual path to simavr executable
+<details>
+<summary>Screenshot 3</summary>
+ 
+![CLion Run Configuration](docs/run_config.png "CLion Run Configuration")
+ 
+</details>
 
+- Set a breakpoint somewhere in your main()
+- Select *SIMAVR*  Run Configuaration
+- Click *Debug*
+- Enjoj!
 ### Diagnose problems
 * Uncomment avrdude verbose switch
 
 ### Use another AVR-based board
+- Check if this repository contains a branch dedicated to your CPU
 - Clone this project
 - Make adjustments as in "Use the project"
 - Open the project with CLion
