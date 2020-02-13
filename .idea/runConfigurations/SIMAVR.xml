@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SIMAVR" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" PROGRAM_PARAMS="-m atmega328 -f16000000  -g cmake-build-debug-mingw-avr-c\clion_avr_c_demo" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="clion_avr_c_demo" TARGET_NAME="clion_avr_c_demo" CONFIG_NAME="Debug-MinGW AVR-C" version="1" RUN_TARGET_PROJECT_NAME="clion_avr_c_demo" RUN_TARGET_NAME="clion_avr_c_demo">
+    <custom-gdb-server version="1" gdb-connect="tcp::1234" executable="C:\tools\simutron-1.0.1-SR1-Win32\bin\simavr.exe" warmup-ms="0" download-type="NONE" reset-cmd="monitor reset" reset-after-download="true" />
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>
