@@ -3,14 +3,13 @@
 #endif
 
 #include "arduino-led.hpp"
-
 int main() {
-    led_init();
+    LED::init();
     while (true) //infinite loop
     {
-        led_on();
+        LED::on();
         _delay_ms(300);
-        led_off();
-        _delay_ms(500);
+        LED::off();
+        _delay_ms(50);
     }
 }
