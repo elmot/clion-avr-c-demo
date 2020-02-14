@@ -15,13 +15,15 @@
 
 ### Use the project
 - Open the project with CLion
-- Setup a new CLion Toolchain (i.e. set compilators location) with your AVR8 GNU installation (*Settings -> Build, Execution, Deployment -> Toolchains*)
+- Setup a new CLion Toolchain (i.e. set compilators and debugger location) with your AVR8 GNU installation (*Settings -> Build, Execution, Deployment -> Toolchains*).
+You may use either `avr-gdb-py` or `avr-gdb`. First one is better but requires Python to be installed.  
 <details>
 <summary>Screenshot 1</summary>
  
 ![CLion Settings Part I](docs/settings_toolchains.png "CLion Settings Part I")
  
 </details>
+
 
 - Use the toolchain for the project (*Settings -> Build, Execution, Deployment -> CMake -> Toolchain:*)
 <details>
