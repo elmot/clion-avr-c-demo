@@ -35,9 +35,6 @@
 - Select *FLASH* run configuration
 - Build it. Arduino yellow LED should start blinking about 1Hz
 
-### Diagnose problems
-* Uncomment avrdude verbose switch
-
 ### Use another AVR-based board
 - Clone this project
 - Make adjustments as in "Use the project"

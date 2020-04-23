@@ -9,7 +9,7 @@ int main() {
     while (true) //infinite loop
     {
         LED::on();
-        _delay_ms(30);
+        _delay_ms(130);
         LED::off();
         _delay_ms(50);
     }
