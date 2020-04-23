@@ -11,7 +11,7 @@ extern "C" {
 
 namespace LED {
     namespace {
-        static auto constexpr LED_BITMASK = 1u << (unsigned) PB5;
+        static auto constexpr LED_BITMASK = 1u << (unsigned) PB2;
     }
 
     inline void init() {
