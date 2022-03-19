@@ -12,6 +12,7 @@ set(TARGET_CPU ATmega328)
 #  Machine-specific stuff
 set(AVR_DUDE_EXECUTABLE C:/tools/avrdude-6.3-mingw32/avrdude.exe)
 set(AVR_DUDE_PORT COM13)
+set(AVR_OBJCOPY_EXECUTABLE C:/tools/avrdude-6.3-mingw32/avr-objdump.exe)
 #  End of machine-specific stuff
 ###################################
 
@@ -32,7 +33,13 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 #### Uncomment this to see flashing process details
 #set(FLASH_VERBOSE_FLAG "-v")
 
+add_custom_target(LINK
+        ${AVR_OBJCOPY_EXECUTABLE} -j .text -j .data -O binary ${PROJECT_BINARY_DIR}/${PROJECT_NAME} ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin
+        DEPENDS ${PROJECT_NAME}
+        COMMENT "Link into a flashable binary")
+
 add_custom_target(FLASH
         ${AVR_DUDE_EXECUTABLE} -p ${TARGET_CPU} -c arduino -b115200 -P ${AVR_DUDE_PORT} ${FLASH_VERBOSE_FLAG} -F -D -U flash:w:${PROJECT_BINARY_DIR}/${PROJECT_NAME}:a
-        DEPENDS ${PROJECT_NAME}
+        DEPENDS LINK
         COMMENT "Flash to ${TARGET_CPU}")
+
